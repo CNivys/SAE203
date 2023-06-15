@@ -1,0 +1,17 @@
+
+{% extends 'main.html' %}
+{% block title %}
+{{cours.titre_cours}}
+{% endblock %}
+
+{% block content %}
+<H1>Cours: {{cours.titre_cours}}, {{cours.date}}, {{cours.duree}}, {{cours.enseigant}} </H1>
+<h2>Absences:</h2>
+<ul>
+  {% for absence in absences %}
+    <li>Absence ID: {{ absence.idabsence }}</li>
+        <li>{{absence.etudiant}}</li>
+  {% endfor %}
+</ul>
+
+{% endblock %}

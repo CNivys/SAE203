@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+{% block title %}
+Absence
+{% endblock %}
+{% block content %}
+
+<ul>
+<p>Pour enregistrer une absence depuis un fichier, le format doit être le suivant:</p>
+<p>"{True ou False}, {id de l'étudiant}, {id du cours}"</p>
+</ul>
+
+
+<form method="post" action="/ecole/traitement_fichier/" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Sélectionner le fichier</button>
+</form>
+{% endblock %}

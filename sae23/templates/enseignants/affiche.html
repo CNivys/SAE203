@@ -1,0 +1,17 @@
+
+{% extends 'main.html' %}
+{% block title %}
+{{ens.nom}}
+{% endblock %}
+
+{% block content %}
+<H1>Enseignant : {{ens.nom}}, {{ens.prenom}}, {{ens.email}} </H1>
+
+<ul>
+  {% for cours in cours %}
+    <li>Cours ID: {{ cours.idcours }}</li>
+    <li>{{ cours.titre_cours }}</li>
+  {% endfor %}
+</ul>
+
+{% endblock %}
