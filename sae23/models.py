@@ -67,7 +67,7 @@ class Etudiant(models.Model):
     nom = models.CharField(max_length=40, blank=True, null=True)
     prenom = models.CharField(max_length=40, blank=True, null=True)
     email = models.CharField(max_length=255, blank=True, null=True)
-    photo = models.ImageField(upload_to="photo/", null=True, blank=True)
+    photo = models.ImageField(upload_to="photo/", null=True, blank=True, default="photo/default.png")
     groupe = models.ForeignKey('Groupe', on_delete=models.CASCADE, db_column='groupe', blank=True, null=True)
 
     def __str__(self):
