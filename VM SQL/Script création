@@ -1,1 +1,13 @@
+CREATE DATABASE Ecole
 
+USE Ecole
+
+CREATE TABLE enseigant(idenseigant SMALLINT PRIMARY KEY AUTO_INCREMENT, nom VARCHAR(40), prenom VARCHAR(40), email NVARCHAR(255));
+
+CREATE TABLE cours(idcours SMALLINT PRIMARY KEY AUTO_INCREMENT, titre_cours VARCHAR(40), date DATE,duree TIME ,enseigant SMALLINT,FOREIGN KEY(enseigant) REFERENCE enseigant(idenseigant));
+
+CREATE TABLE groupe(idgroupe SMALLINT PRIMARY KEY AUTO_INCREMENT, nom VARCHAR(40));
+
+CREATE TABLE etudiant(idetudiant SMALLINT PRIMARY KEY AUTO_INCREMENT, nom VARCHAR(40), prenom VARCHAR(40), email NVARCHAR(255),photo VARCHAR(100),groupe SMALLINT, FOREIGN KEY(groupe) REFERENCE groupe(idgroupe));
+
+CREATE TABLE absence(idabsence SMALLINT PRIMARY KEY AUTO_INCREMENT, justifier TINYINT, justification VARCHAR(100),cours SMALLINT,FOREIGN KEY(cours) REFERENCE groupe(idgroupe),etudiant SMALLINT,FOREIGN KEY(etudiant) REFERENCE etudiant(idetudiant));
