@@ -1,0 +1,18 @@
+fichier: /etc/nginx/sites-available/projet
+
+server{
+  listen: 80;
+  server_name 192.168.43.140;
+  
+  location / {
+    proxy_pass http://192.168.43.130:8000;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+  }
+  
+  location /static/ {
+    autoindex on;
+    proxy_pass http://192.168.43.130:8000/static/;
+    
+   }
+}
