@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+{% block title %}
+Absence
+{% endblock %}
+
+{% block content %}
+<h1>Absence : </h1>
+<a id="riaj"href="/ecole/ajoutabs/">Ajout d'une absence</a>
+<a id="riaj"href="/ecole/selectionner_fichier/">Ajout d'une absence via un fichier</a>
+    <ol>
+        {% for l in liste %}
+            <li>{{l}} <a id="riaj" href="/ecole/afficheabs/{{l.idabsence}}"> affiche </a> <a id="riaj" href="/ecole/updateabs/{{l.idabsence}}">update</a> <a id="riaj"  href="/ecole/deleteabs/{{l.idabsence}}">delete</a></li>
+        {% endfor %}
+    </ol>
+{% endblock %}

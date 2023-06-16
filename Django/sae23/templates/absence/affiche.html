@@ -1,0 +1,17 @@
+
+{% extends 'main.html' %}
+{% block title %}
+Absence
+{% endblock %}
+
+{% block content %}
+<H1>Absence : {{abs.etudiant}}, {{abs.cours}} </H1>
+<a href="/media/{{ abs.justification }}">Télécharger la justification</a>
+<ul>
+	{% if abs.justifier is True %}
+        <li>Justifié</li>
+        {% else %}
+        <li>Non justifié</li>
+        {% endif %}
+</ul>
+{% endblock %}

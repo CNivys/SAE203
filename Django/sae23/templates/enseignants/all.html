@@ -1,0 +1,14 @@
+{% extends 'main.html' %}
+{% block title %}
+Enseignants
+{% endblock %}
+
+{% block content %}
+<h1>Enseignants : </h1>
+<a id="riaj"href="/ecole/ajoutens/">Ajout d'un enseignant</a>
+    <ol>
+        {% for l in liste %}
+            <li>{{l}} <a id="riaj" href="/ecole/afficheens/{{l.idenseignant}}"> affiche </a> <a id="riaj" href="/ecole/updateens/{{l.idenseignant}}">update</a> <a id="riaj"  href="/ecole/deleteens/{{l.idenseignant}}">delete</a></li>
+        {% endfor %}
+    </ol>
+{% endblock %}
